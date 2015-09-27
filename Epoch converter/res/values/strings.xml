@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Epoch Converter</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="epochHint">Enter Epoch/ Unix Time</string>
+    <string name="pick_date">Select date</string>
+    <string name="pick_time">Select time</string>
+
+</resources>

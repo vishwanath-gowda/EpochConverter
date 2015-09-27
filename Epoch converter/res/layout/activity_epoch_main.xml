@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.vishwanathgowdak.EpochConverter.EpochMain" >
+
+    <EditText
+        android:id="@+id/epochText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:maxLength="10"
+        android:hint="@string/epochHint"
+        android:inputType="number" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/selectdate"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/epochText"
+        android:layout_below="@id/epochText"
+        android:onClick="showDatePickerDialog"
+        android:gravity="center_horizontal"
+        android:hint="select date"
+        android:width="100dp" />
+
+    <TextView
+        android:id="@+id/selecttime"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/epochText"
+        android:layout_below="@id/epochText"
+        android:onClick="showTimePickerDialog"
+        android:gravity="center_horizontal"
+        android:hint=" select time"
+        android:width="100dp" />
+    
+
+</RelativeLayout>
