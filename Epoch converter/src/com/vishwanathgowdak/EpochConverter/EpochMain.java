@@ -112,7 +112,6 @@ public class EpochMain extends Activity {
 			int day = c.get(Calendar.DAY_OF_MONTH);
 			DatePickerDialog dpd = new DatePickerDialog(getActivity(), this, year, month, day);
 			dpd.getDatePicker().setMinDate(0);
-			// Create a new instance of DatePickerDialog and return it
 			return dpd;
 		}
 
