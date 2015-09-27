@@ -18,11 +18,10 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView.FindListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.ikovac.timepickerwithseconds.view.MyTimePickerDialog;
 import com.ikovac.timepickerwithseconds.view.TimePicker;
@@ -42,20 +41,10 @@ public class EpochMain extends Activity {
 		final EditText epoch = (EditText)findViewById(R.id.epochText);
 		timeView=(TextView)findViewById(R.id.selecttime);
 		epoch.addTextChangedListener(new TextWatcher() {
-
 			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
-
-			}
-
+			public void onTextChanged(CharSequence s, int start, int before, int count) {}
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
-
-			}
-
+			public void beforeTextChanged(CharSequence s, int start, int count,int after) {}
 			@Override
 			public void afterTextChanged(Editable s) {
 				long newEpoch = 0;
@@ -65,8 +54,6 @@ public class EpochMain extends Activity {
 				dateView.setText(CurrentSelectionValues.getYear()+"/"+CurrentSelectionValues.getMonth()+"/"+CurrentSelectionValues.getDate());
 				timeView.setText(CurrentSelectionValues.getHour()+":"+CurrentSelectionValues.getMinute()+":"+CurrentSelectionValues.getSecond());
 			}
-
-
 		});
 	}
 
@@ -90,7 +77,6 @@ public class EpochMain extends Activity {
 
 	public void showDatePickerDialog(View v) {
 		DialogFragment newFragment = new DatePickerFragment();
-
 		newFragment.show(getFragmentManager(), "datePicker");
 	}
 
@@ -105,7 +91,6 @@ public class EpochMain extends Activity {
 				CurrentSelectionValues.setMinute(minute);
 				CurrentSelectionValues.setSecond(seconds);
 				TextView time= (TextView)findViewById(R.id.selecttime);
-
 				time.setText(CurrentSelectionValues.getHour()+":"+CurrentSelectionValues.getMinute()+":"+CurrentSelectionValues.getSecond());
 				TextView epoch= (TextView)findViewById(R.id.epochText);
 				long epochTime=epochLogic.getEpoch();
@@ -116,9 +101,7 @@ public class EpochMain extends Activity {
 		mTimePicker.show();
 	}
 
-	public static class DatePickerFragment extends DialogFragment
-
-	implements DatePickerDialog.OnDateSetListener {
+	public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
