@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -17,9 +18,14 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdRequest.Builder;
+import com.google.android.gms.ads.AdView;
 import com.ikovac.timepickerwithseconds.view.MyTimePickerDialog;
 import com.ikovac.timepickerwithseconds.view.TimePicker;
 
@@ -33,7 +39,13 @@ public class EpochMain extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_epoch_main);
+		AdView mAdView = (AdView) findViewById(R.id.adView);
+		Builder b = new AdRequest.Builder();
+		b.addTestDevice("C326E3E6AD7D47FDF89D8B2D1C924E08");
+        AdRequest adRequest = b.build();
+        mAdView.loadAd(adRequest);
 		dateView=(TextView)findViewById(R.id.selectdate);
 		final EditText epoch = (EditText)findViewById(R.id.epochText);
 		timeView=(TextView)findViewById(R.id.selecttime);
@@ -48,7 +60,7 @@ public class EpochMain extends Activity {
 				if((s.length()>0))
 					newEpoch=Long.valueOf(epoch.getText().toString());
 				epochLogic.setDateTimethroughEpoch(newEpoch);
-				dateView.setText(CurrentSelectionValues.getYear()+"/"+CurrentSelectionValues.getMonth()+"/"+CurrentSelectionValues.getDate());
+				dateView.setText(MonthMap.getInstance().getShortMonth(Integer.parseInt(CurrentSelectionValues.getMonth()))+"/"+CurrentSelectionValues.getDate()+"/"+CurrentSelectionValues.getYear());
 				timeView.setText(CurrentSelectionValues.getHour()+":"+CurrentSelectionValues.getMinute()+":"+CurrentSelectionValues.getSecond());
 			}
 		});

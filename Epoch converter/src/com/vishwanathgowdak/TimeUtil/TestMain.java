@@ -21,7 +21,7 @@ public class TestMain {
 		Date date = sdf.parse("2015/09/28 01:30:00");
 		
 		//VishTime.getInstance().covertTimeZone(date, TimeZone.getTimeZone("IST"), TimeZone.getTimeZone("UTC"));
-		Calendar cal = VishTime.getInstance().CovertCalTimeZone(date, from, to);
+		Calendar cal = VishTime.getInstance().ConvertCalTimeZone(date, from, to);
 		System.out.println(cal.get(Calendar.HOUR_OF_DAY));
 		System.out.println(sdf.format(cal.getTime()));
 		

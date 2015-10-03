@@ -7,5 +7,6 @@
     <string name="epochHint">Enter Epoch/ Unix Time</string>
     <string name="pick_date">Select date</string>
     <string name="pick_time">Select time</string>
+    <string name = "ad_unit_id">ca-app-pub-8591460773245129/2967760891</string>
 
 </resources>

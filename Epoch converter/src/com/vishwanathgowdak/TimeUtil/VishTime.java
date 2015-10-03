@@ -30,7 +30,7 @@ public class VishTime implements VishTimeInterface{
 	}
 	
 	@Override
-	public Calendar CovertCalTimeZone(Date date, TimeZone from, TimeZone to) {
+	public Calendar ConvertCalTimeZone(Date date, TimeZone from, TimeZone to) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTimeZone(from);
 		cal.setTimeInMillis(date.getTime());

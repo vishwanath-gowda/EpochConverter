@@ -8,6 +8,6 @@ import java.util.TimeZone;
 public interface VishTimeInterface {
 
 	public String covertTimeZone(Date date, TimeZone from, TimeZone to, SimpleDateFormat sdf);
-	public Calendar CovertCalTimeZone(Date date, TimeZone from, TimeZone to);
+	public Calendar ConvertCalTimeZone(Date date, TimeZone from, TimeZone to);
 	
 }
