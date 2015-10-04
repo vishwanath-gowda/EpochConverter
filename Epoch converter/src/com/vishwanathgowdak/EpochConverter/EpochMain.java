@@ -43,7 +43,7 @@ public class EpochMain extends Activity {
 		setContentView(R.layout.activity_epoch_main);
 		AdView mAdView = (AdView) findViewById(R.id.adView);
 		Builder b = new AdRequest.Builder();
-		b.addTestDevice("C326E3E6AD7D47FDF89D8B2D1C924E08");
+		//b.addTestDevice("C326E3E6AD7D47FDF89D8B2D1C924E08");
         AdRequest adRequest = b.build();
         mAdView.loadAd(adRequest);
 		dateView=(TextView)findViewById(R.id.selectdate);
