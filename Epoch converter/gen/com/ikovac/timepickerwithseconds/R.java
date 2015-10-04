@@ -15,13 +15,13 @@ public final class R {
 		public static final int ic_launcher = 0x7f02001a;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f0b0023;
-		public static final int amPm = 0x7f0b0022;
-		public static final int hour = 0x7f0b001f;
-		public static final int minute = 0x7f0b0020;
-		public static final int seconds = 0x7f0b0021;
-		public static final int time = 0x7f0b001d;
-		public static final int timePicker = 0x7f0b001e;
+		public static final int action_settings = 0x7f0b002a;
+		public static final int amPm = 0x7f0b0029;
+		public static final int hour = 0x7f0b0026;
+		public static final int minute = 0x7f0b0027;
+		public static final int seconds = 0x7f0b0028;
+		public static final int time = 0x7f0b0024;
+		public static final int timePicker = 0x7f0b0025;
 	}
 	public static final class layout {
 		public static final int activity_main = 0x7f030001;

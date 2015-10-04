@@ -10,16 +10,80 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.vishwanathgowdak.EpochConverter.EpochMain" >
 
+
+    <TextView 
+        android:id="@+id/labelPresent"
+        android:text="Present"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="15sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="3dp"/>
+    
+    <View style="@style/Hor_Divider" 
+        android:id="@+id/presentLine"
+        android:layout_below="@id/labelPresent"
+        android:layout_marginTop="5dp"
+       />
+    
+    <TextView
+        android:id="@+id/labelCurTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/presentLine"
+        android:layout_marginTop="3dp"
+        android:text="Time"
+        android:textColor="#ffffff"
+        android:textSize="21sp" />
+    
+    <TextView
+        android:id="@+id/CurTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/labelCurTime"
+        android:layout_toRightOf="@id/labelCurTime"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ffffff"
+        android:textSize="21sp" />
+    <TextView
+        android:id="@+id/labelCurEpoch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelCurTime"
+        android:layout_marginTop="3dp"
+        android:text="Epoch"
+        android:textColor="#ffffff"
+        android:textSize="21sp" />
+    <TextView
+        android:id="@+id/CurEpoch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/labelCurEpoch"
+        android:layout_toRightOf="@id/labelCurEpoch"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ffffff"
+        android:textSize="21sp" />
+    
+    <View style="@style/Hor_Divider" 
+        android:id="@+id/presentEndLine"
+        android:layout_below="@id/labelCurEpoch"
+        android:layout_marginTop="5dp"/>
+    
+    
+    
+
+
     <TextView
         android:id="@+id/labelEpochText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_below="@id/labelCurTime"
+        android:layout_marginTop="25dp"
         android:text="Epoch Time  : "
         android:textColor="#ffffff"
         android:textSize="21sp" />
-    
+
     <TextView
         android:id="@+id/labelHumanText"
         android:layout_width="wrap_content"
@@ -52,9 +116,9 @@
         android:id="@+id/selectdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/labelHumanText"
         android:layout_below="@id/labelEpochText"
         android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/labelHumanText"
         android:gravity="left"
         android:hint="Edit date"
         android:onClick="showDatePickerDialog"

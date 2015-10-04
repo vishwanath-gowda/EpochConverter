@@ -13,6 +13,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -35,6 +36,9 @@ public class EpochMain extends Activity {
 
 	public static TextView dateView;
 	public static TextView timeView;
+	public static TextView curTime;
+	public static TextView curEpoch;
+	CountDownTimer newtimer;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class EpochMain extends Activity {
 		//b.addTestDevice("C326E3E6AD7D47FDF89D8B2D1C924E08");
         AdRequest adRequest = b.build();
         mAdView.loadAd(adRequest);
+        curTime=(TextView)findViewById(R.id.CurTime);
+        curEpoch=(TextView)findViewById(R.id.CurEpoch);
 		dateView=(TextView)findViewById(R.id.selectdate);
 		final EditText epoch = (EditText)findViewById(R.id.epochText);
 		timeView=(TextView)findViewById(R.id.selecttime);
@@ -64,6 +70,19 @@ public class EpochMain extends Activity {
 				timeView.setText(CurrentSelectionValues.getHour()+":"+CurrentSelectionValues.getMinute()+":"+CurrentSelectionValues.getSecond());
 			}
 		});
+		newtimer = new CountDownTimer(1000000000, 1000) { 
+
+            public void onTick(long millisUntilFinished) {
+                Calendar c = Calendar.getInstance();
+                curTime.setText(c.get(Calendar.HOUR_OF_DAY)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND));
+                curEpoch.setText(epochLogic.getEpochByCal(c));
+                
+            }
+            public void onFinish() {
+
+            }
+        };
+        newtimer.start();
 	}
 
 
@@ -84,6 +103,7 @@ public class EpochMain extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	
 	public void showDatePickerDialog(View v) {
 		DialogFragment newFragment = new DatePickerFragment();
 		newFragment.show(getFragmentManager(), "datePicker");
@@ -159,6 +179,10 @@ public class EpochMain extends Activity {
 
 			return epoch;
 
+		}
+		public static String getEpochByCal(Calendar c){
+			
+			return (c==null)? null : String.valueOf((c.getTimeInMillis()/1000));
 		}
 		public static void setDateTimethroughEpoch(long epoch){
 			Date date= new Date(epoch * 1000L);
