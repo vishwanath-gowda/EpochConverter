@@ -104,6 +104,7 @@ com.google.ads.mediation.MediationAdRequest -> com.google.a.a.a:
     java.lang.String V() -> w
     java.lang.String W() -> x
     long getEpoch() -> y
+    java.lang.String getEpochByCal(java.util.Calendar) -> a
     void setDateTimethroughEpoch(long) -> a
 com.google.ads.mediation.MediationAdapter -> com.google.a.a.b:
     void destroy() -> a
@@ -3480,6 +3481,9 @@ com.vishwanathgowdak.EpochConverter.CurrentSelectionValues -> com.vishwanathgowd
 com.vishwanathgowdak.EpochConverter.EpochMain -> com.vishwanathgowdak.EpochConverter.EpochMain:
     android.widget.TextView dateView -> a
     android.widget.TextView timeView -> b
+    android.widget.TextView curTime -> c
+    android.widget.TextView curEpoch -> d
+    android.os.CountDownTimer newtimer -> e
     void onCreate(android.os.Bundle) -> onCreate
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
@@ -3491,12 +3495,15 @@ com.vishwanathgowdak.EpochConverter.EpochMain$1 -> com.vishwanathgowdak.EpochCon
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
     void afterTextChanged(android.text.Editable) -> afterTextChanged
 com.vishwanathgowdak.EpochConverter.EpochMain$2 -> com.vishwanathgowdak.EpochConverter.c:
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.vishwanathgowdak.EpochConverter.EpochMain$3 -> com.vishwanathgowdak.EpochConverter.d:
     com.vishwanathgowdak.EpochConverter.EpochMain this$0 -> a
     void onTimeSet$3e996c63(int,int,int) -> a
-com.vishwanathgowdak.EpochConverter.EpochMain$DatePickerFragment -> com.vishwanathgowdak.EpochConverter.d:
+com.vishwanathgowdak.EpochConverter.EpochMain$DatePickerFragment -> com.vishwanathgowdak.EpochConverter.e:
     android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
     void onDateSet(android.widget.DatePicker,int,int,int) -> onDateSet
-com.vishwanathgowdak.EpochConverter.MonthMap -> com.vishwanathgowdak.EpochConverter.e:
+com.vishwanathgowdak.EpochConverter.MonthMap -> com.vishwanathgowdak.EpochConverter.f:
     com.vishwanathgowdak.EpochConverter.MonthMap mp -> a
     java.util.Map m -> b
     com.vishwanathgowdak.EpochConverter.MonthMap getInstance() -> a

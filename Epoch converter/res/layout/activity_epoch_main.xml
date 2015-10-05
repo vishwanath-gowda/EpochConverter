@@ -1,146 +1,204 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#dd4242"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.vishwanathgowdak.EpochConverter.EpochMain" >
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#dd4242" >
 
-    <TextView 
-        android:id="@+id/labelPresent"
-        android:text="Present"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textSize="15sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="3dp"/>
-    
-    <View style="@style/Hor_Divider" 
-        android:id="@+id/presentLine"
-        android:layout_below="@id/labelPresent"
-        android:layout_marginTop="5dp"
-       />
-    
-    <TextView
-        android:id="@+id/labelCurTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/presentLine"
-        android:layout_marginTop="3dp"
-        android:text="Time"
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
-    
-    <TextView
-        android:id="@+id/CurTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/labelCurTime"
-        android:layout_toRightOf="@id/labelCurTime"
-        android:layout_marginLeft="5dp"
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
-    <TextView
-        android:id="@+id/labelCurEpoch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/labelCurTime"
-        android:layout_marginTop="3dp"
-        android:text="Epoch"
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
-    <TextView
-        android:id="@+id/CurEpoch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/labelCurEpoch"
-        android:layout_toRightOf="@id/labelCurEpoch"
-        android:layout_marginLeft="5dp"
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
-    
-    <View style="@style/Hor_Divider" 
-        android:id="@+id/presentEndLine"
-        android:layout_below="@id/labelCurEpoch"
-        android:layout_marginTop="5dp"/>
-    
-    
-    
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#dd4242"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="com.vishwanathgowdak.EpochConverter.EpochMain" >
 
+            <TextView
+                android:id="@+id/labelPresent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="3dp"
+                android:text="Present"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/labelEpochText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/labelCurTime"
-        android:layout_marginTop="25dp"
-        android:text="Epoch Time  : "
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
+            <View
+                android:id="@+id/presentLine"
+                style="@style/Hor_Divider"
+                android:layout_below="@id/labelPresent"
+                android:layout_marginTop="5dp" />
 
-    <TextView
-        android:id="@+id/labelHumanText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/labelEpochText"
-        android:layout_marginTop="20dp"
-        android:text="Human Time : "
-        android:textColor="#ffffff"
-        android:textSize="21sp" />
+            <TableLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/presentLine"
+                android:layout_marginTop="5dp" >
 
-    <EditText
-        android:id="@+id/epochText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/labelEpochText"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/labelEpochText"
-        android:ems="10"
-        android:hint="@string/epochHint"
-        android:inputType="number"
-        android:maxLength="10"
-        android:textColor="#ffffff"
-        android:textColorHint="#ff7575"
-        android:textSize="21sp" >
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip" >
 
-        <requestFocus />
-    </EditText>
+                    <TextView
+                        android:id="@+id/labelCurTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Time"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
 
-    <TextView
-        android:id="@+id/selectdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/labelEpochText"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/labelHumanText"
-        android:gravity="left"
-        android:hint="Edit date"
-        android:onClick="showDatePickerDialog"
-        android:textColor="#ffffff"
-        android:textColorHint="#ff7575"
-        android:textSize="21sp" />
+                    <TextView
+                        android:id="@+id/CurTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/labelCurTime"
+                        android:layout_weight="5"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
 
-    <TextView
-        android:id="@+id/selecttime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/labelEpochText"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/selectdate"
-        android:gravity="right"
-        android:hint="Edit time"
-        android:onClick="showTimePickerDialog"
-        android:textColor="#ffffff"
-        android:textColorHint="#ff7575"
-        android:textSize="21sp"
-        android:width="100dp" />
+                    <CheckBox
+                        android:id="@+id/LocalGMTCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="GMT"
+                        android:textSize="21sp"
+                        android:textColor="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/labelCurEpoch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Epoch"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
+
+                    <TextView
+                        android:id="@+id/CurEpoch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/labelCurEpoch"
+                        android:layout_weight="7"
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/labelConvert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tableLayout1"
+                android:layout_marginTop="40dp"
+                android:text="Convert"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/presentEndLine"
+                style="@style/Hor_Divider"
+                android:layout_below="@id/labelConvert"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/labelEpochText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/presentEndLine"
+                android:layout_marginTop="10dp"
+                android:text="Epoch Time : "
+                android:gravity="right"
+                android:textColor="#ffffff"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/labelHumanText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelEpochText"
+                android:layout_marginTop="20dp"
+                android:text="UTC  Time   : "
+                android:layout_alignRight="@id/labelEpochText"
+                android:gravity="right"
+                android:textColor="#ffffff"
+                android:textSize="21sp" />
+
+            <EditText
+                android:id="@+id/epochText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/labelEpochText"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/labelEpochText"
+                android:ems="10"
+                android:hint="@string/epochHint"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="#ffffff"
+                android:textColorHint="#ff7575"
+                android:textSize="21sp" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/selectdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelEpochText"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@id/epochText"
+                android:gravity="left"
+                android:hint=" Edit date"
+                android:onClick="showDatePickerDialog"
+                android:textColor="#ffffff"
+                android:textColorHint="#ff7575"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/selecttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/labelEpochText"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/selectdate"
+                android:singleLine="true"
+                android:gravity="right"
+                android:hint="Edit time"
+                android:onClick="showTimePickerDialog"
+                android:textColor="#ffffff"
+                android:textColorHint="#ff7575"
+                android:textSize="21sp"
+                android:width="100dp" />
+
+            <View
+                android:id="@+id/covertEndLine"
+                style="@style/Hor_Divider"
+                android:layout_below="@id/labelHumanText"
+                android:layout_marginTop="15dp" />
+        </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
