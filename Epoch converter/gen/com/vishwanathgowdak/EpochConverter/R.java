@@ -717,6 +717,8 @@ containing a value of this type.
     
          */
         public static final int WalletFragmentDefaultStyle=0x7f050004;
+        public static final int text_label=0x7f050009;
+        public static final int text_textview=0x7f050008;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
