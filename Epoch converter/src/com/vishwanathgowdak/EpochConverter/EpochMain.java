@@ -132,7 +132,7 @@ public class EpochMain extends Activity {
 				time.setText(CurrentSelectionValues.getHour()+":"+CurrentSelectionValues.getMinute()+":"+CurrentSelectionValues.getSecond());
 				TextView epoch= (TextView)findViewById(R.id.epochText);
 				long epochTime=epochLogic.getEpoch();
-				if(epochTime >0)
+				if(epochTime >=0)
 					epoch.setText(Long.valueOf(epochTime).toString());
 			}
 		}, now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), now.get(Calendar.SECOND), true);
@@ -161,7 +161,7 @@ public class EpochMain extends Activity {
 			date.setText(CurrentSelectionValues.getYear()+"/"+CurrentSelectionValues.getMonth()+"/"+CurrentSelectionValues.getDate());
 			long epochTime=epochLogic.getEpoch();
 			TextView epoch= (TextView)getActivity().findViewById(R.id.epochText);
-			if(epochTime >0)
+			if(epochTime >=0)
 				epoch.setText(Long.valueOf(epochTime).toString());
 		}
 	}

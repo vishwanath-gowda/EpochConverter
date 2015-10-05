@@ -51,31 +51,30 @@
 
                     <TextView
                         android:id="@+id/labelCurTime"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="Time"
                         android:textColor="#ffffff"
                         android:textSize="21sp" />
 
                     <TextView
                         android:id="@+id/CurTime"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/labelCurTime"
-                        android:layout_weight="5"
+                        android:layout_weight="3"
                         android:textColor="#ffffff"
                         android:textSize="21sp" />
 
                     <CheckBox
                         android:id="@+id/LocalGMTCheck"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_weight="1"
                         android:checked="true"
                         android:text="GMT"
-                        android:textSize="21sp"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
                 </TableRow>
 
                 <TableRow
@@ -86,21 +85,25 @@
 
                     <TextView
                         android:id="@+id/labelCurEpoch"
-                        android:layout_width="0dp"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="Epoch"
                         android:textColor="#ffffff"
                         android:textSize="21sp" />
 
                     <TextView
                         android:id="@+id/CurEpoch"
-                        android:layout_width="0dp"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/labelCurEpoch"
-                        android:layout_weight="7"
+                        android:layout_weight="3"
                         android:textColor="#ffffff"
                         android:textSize="21sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1" />
                 </TableRow>
             </TableLayout>
 
@@ -126,8 +129,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/presentEndLine"
                 android:layout_marginTop="10dp"
-                android:text="Epoch Time : "
                 android:gravity="right"
+                android:text="Epoch Time : "
                 android:textColor="#ffffff"
                 android:textSize="21sp" />
 
@@ -135,11 +138,11 @@
                 android:id="@+id/labelHumanText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignRight="@id/labelEpochText"
                 android:layout_below="@id/labelEpochText"
                 android:layout_marginTop="20dp"
-                android:text="UTC  Time   : "
-                android:layout_alignRight="@id/labelEpochText"
                 android:gravity="right"
+                android:text="UTC  Time   : "
                 android:textColor="#ffffff"
                 android:textSize="21sp" />
 
@@ -165,9 +168,9 @@
                 android:id="@+id/selectdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/epochText"
                 android:layout_below="@id/labelEpochText"
                 android:layout_marginTop="20dp"
-                android:layout_alignLeft="@id/epochText"
                 android:gravity="left"
                 android:hint=" Edit date"
                 android:onClick="showDatePickerDialog"
@@ -183,10 +186,10 @@
                 android:layout_below="@id/labelEpochText"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/selectdate"
-                android:singleLine="true"
                 android:gravity="right"
                 android:hint="Edit time"
                 android:onClick="showTimePickerDialog"
+                android:singleLine="true"
                 android:textColor="#ffffff"
                 android:textColorHint="#ff7575"
                 android:textSize="21sp"
